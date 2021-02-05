@@ -1,0 +1,20 @@
+{
+  "name": "NodeJS_FirstApp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeimerOlea/NodeJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeimerOlea/NodeJS/issues"
+  },
+  "homepage": "https://github.com/DeimerOlea/NodeJS#readme"
+}
