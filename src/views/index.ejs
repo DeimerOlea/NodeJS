@@ -1,0 +1,47 @@
+
+<%- include ('partials/_header')%>
+
+    <div class="container">
+        <div class="row">
+            <!-- FORM -->
+            <div class="col-md-4">
+                <div class="card">
+                <div class="card-body">
+                    <h1 class="h3">Carros favoritos</h1>
+                    <form action="/add" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="marca" placeholder="Marca del automovil" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text"  name="modelo" placeholder="Modelo" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text"  name="color" placeholder="Color" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="descripcion" id="descripcion" placeholder="Descripcion del vehiculo" cols="30" class="form-control"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Add</button>
+                    </form>
+                </div>
+                </div>
+            </div>
+            <!-- LIST -->
+            <div class="col-md-7">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Titulo</th>
+                            <th>Descripcion</th>
+                            <th>Operacion</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<%- include ('partials/_footer')%>
+
