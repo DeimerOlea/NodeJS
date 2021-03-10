@@ -1,16 +1,45 @@
 const express = require ('express');
 const router = express.Router();
 
-const Car = require ('../models/cars');
 
-router.get('/', (req, res) => {
-    res.render('index')
+const Task = require ('../models/tasks');
+const User = require ('../models/users');
+
+//Homepage
+router.get('/', async (req, res) => {
+    const tasks = await Task.find();
+    const users = await User.find();
+    res.render('index',{tasks, users});
 });
 
-router.post ('/add', (req, res) =>{
-    console.log (req.body);
-    res.send('recibido');
+
+//Tasks page
+router.get('/tasks', async (req, res) => {
+    const tasks = await Task.find();
+    const users = await User.find();
+    res.render('tasks',{tasks, users});
 });
 
+//AddTask
+router.post ('/addTask', async (req, res) =>{
+    const task = new Task(req.body);
+    console.log(req.body);
+    await task.save();
+    res.redirect('/');
+});
+
+//Find all tasks
+router.post ('/findTasks', async (req, res) =>{
+    const task = new Task(req.body);
+    console.log(req.body);
+    await task.save();
+    res.redirect('/');
+});
+
+router.post ('/addUser', async (req, res) =>{
+    const user = new User(req.body);
+    await user.save();
+    res.redirect('/');
+});
 
 module.exports = router;

@@ -1,11 +1,11 @@
 
 <%-include ('partials/_header')%>
 <div class="container">
-        <div  class="row"><h1 >To-Do List:</h1></div>
+    <div  class="row"><h1 >Tasks List</h1></div>
         <div class="row">
             <!-- FORM -->
             <div class="col-md-2">
-                <div class="card mb-4 bg-light">
+                <!-- <div class="card mb-4 bg-light">
                 <div class="card-body">
                     <h5 class="card-title">New task</h5>
                     <form action="/addTask" method="POST">
@@ -28,15 +28,15 @@
                         <button type="submit" class="btn btn-primary btn-sm mb-2">Add</button>                                           
                     </form>
                 </div>
-                </div>
+                </div> -->
                 <div class="card mb-4 bg-light">
                     <div class="card-body">
-                        <h5 class="card-title">New user</h5>
+                        <h5 class="card-title">Find task</h5>
                         <form action="/addUser" method="POST">
                             <div class="form-group">                            
-                                <input type="text" name="userName" placeholder="User name" class="form-control mb-2">
+                                <input type="text" name="userName" placeholder="Type task title" class="form-control mb-2">
                             </div>               
-                            <button type="submit" class="btn btn-primary btn-sm mb-2">Add</button>                                           
+                            <button type="submit" class="btn btn-primary btn-sm mb-2">Find</button>                                           
                         </form>
                     </div>
                     </div>
@@ -59,8 +59,6 @@
                                 <td><%-i + 1 %></td>
                                 <td><%-tasks[i].title %></td>
                                 <td><%-tasks[i].description %></td>
-                                <td><%-tasks[i].assigned %></td>
-                                <td><%-tasks[i].status %></td>
                             </tr>
                         <% } %>
                     </tbody>
