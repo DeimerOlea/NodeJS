@@ -1,44 +1,50 @@
 
 <%-include ('partials/_header')%>
 <div class="container">
-        <div  class="row"><h1 >To-Do List:</h1></div>
         <div class="row">
             <!-- FORM -->
-            <div class="col-md-2">
-                <div class="card mb-4 bg-light">
-                <div class="card-body">
-                    <h5 class="card-title">New task</h5>
-                    <form action="/addTask" method="POST">
-                        <div class="form-group">
-                            <input type="text" name="title" placeholder="Title" class="form-control mb-2">
-                        </div>
-                        <div class="form-group">
-                            <textarea name="description" id="description" placeholder="Description" cols="30" class="form-control mb-2"></textarea>
-                        </div>   
-                        <div class="form-group">
-                            <label for="">Assing user</label>
-                            <select class="form-select mb-2">       
-                                <option selected>Unassigned</option>           
-                                <% for(var i = 0; i < users.length; i++){ %>
-                                <option name="idUser" value="<%users[i].userName%>"><%-users[i].userName %></option>
-                                <% } %>
+            <div class="col-md-2 ">
 
-                            </select> 
-                        </div>              
-                        <button type="submit" class="btn btn-primary btn-sm mb-2">Add</button>                                           
-                    </form>
-                </div>
-                </div>
-                <div class="card mb-4 bg-light">
-                    <div class="card-body">
-                        <h5 class="card-title">New user</h5>
-                        <form action="/addUser" method="POST">
-                            <div class="form-group">                            
-                                <input type="text" name="userName" placeholder="User name" class="form-control mb-2">
-                            </div>               
-                            <button type="submit" class="btn btn-primary btn-sm mb-2">Add</button>                                           
-                        </form>
+                <!-- card tasks -->
+                
+                <!-- <div class="card mb-4 bg-light"> -->
+                    <div class="card mb-4 bg-light">
+                        <div class="card-header text-center h5 text-white bg-secondary">Add new task</div>
+                        <div class="card-body">
+                            <form action="/addTask" method="POST">
+                                <div class="form-group">
+                                    <input type="text" name="title" placeholder="Title" class="form-control mb-2">
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="description" id="description" placeholder="Description" cols="30" class="form-control mb-2"></textarea>
+                                </div>   
+                                <div class="form-group">
+                                    <label for="">Assing user</label>
+                                    <select class="form-select mb-2">       
+                                        <option selected>Unassigned</option>           
+                                        <% for(var i = 0; i < users.length; i++){ %>
+                                        <option name="idUser" value="<%users[i].userName%>"><%-users[i].userName %></option>
+                                        <% } %>
+
+                                    </select> 
+                                </div>              
+                                <button type="submit" class="btn btn-primary btn-sm mb-2">Add</button>                                           
+                            </form>
+                        </div>
                     </div>
+                    <!-- </div> -->
+                    <!-- <div class="card-header">Add new user</div> -->
+                    <div class="card mb-4 bg-light">
+                        <div class="card-header text-center h5 text-white bg-secondary">Add new user</div>
+                        <div class="card-body">
+                            <!-- <h5 class="card-title">New user</h5> -->
+                            <form action="/addUser" method="POST">
+                                <div class="form-group">                            
+                                    <input type="text" name="userName" placeholder="User name" class="form-control mb-2">
+                                </div>               
+                                <button type="submit" class="btn btn-primary btn-sm mb-2">Add</button>                                           
+                            </form>
+                        </div>
                     </div>
             </div>
             <!-- LIST -->

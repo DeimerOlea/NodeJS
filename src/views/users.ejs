@@ -1,15 +1,17 @@
 
 <%-include ('partials/_header')%>
+<pre><%-users%></pre>
+
 <div class="container">
         <div class="row">
             <!-- FORM -->
             <div class="col-md-2">
                 <div class="card mb-4 bg-light">
-                    <div class="card-header text-center h5 text-white bg-secondary">Find task</div>
+                    <div class="card-header text-center h5 text-white bg-secondary">Find user</div>
                     <div class="card-body">
-                        <form action="/tasks" method="POST">
+                        <form action="/users" method="POST">
                             <div class="form-group">                            
-                                <input type="text" name="userName" value="nothing" placeholder="Type task title" class="form-control mb-2">
+                                <input type="text" name="userName" placeholder="Type task title" class="form-control mb-2">
                             </div>               
                             <button type="submit" class="btn btn-primary btn-sm mb-2">Find</button>                                           
                         </form>
@@ -22,18 +24,16 @@
                     <thead class="table-dark">
                         <tr>
                             <th>No.</th>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>Asigned to</th>
-                            <th>Status</th>
+                            <th>User name</th>
+                            <th>tasks</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <% for(var i = 0; i < tasks.length; i++){ %>
+                        <% for(var i = 0; i < users.length; i++){ %>
                             <tr>
                                 <td><%-i + 1 %></td>
-                                <td><%-tasks[i].title %></td>
-                                <td><%-tasks[i].description %></td>
+                                <td><%-users[i].userName %></td>
+                                <td><!--<%-users[i].description %>--></td>
                             </tr>
                         <% } %>
                     </tbody>
