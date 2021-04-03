@@ -1,0 +1,64 @@
+
+<%-include ('partials/_header')%>
+<!-- <pre>
+    <%=users%>
+</pre> -->
+<div class="container">
+    <div class="row">
+
+    <div class="col-md-8 ">
+                    <div class="card mb-4 bg-light">
+                        <div class="card-header text-center h5 text-white bg-secondary">Edit Task</div>
+                        <div class="card-body">
+                            <form action="/updateTask/<%= task.id %>" method="POST">                                
+                                <div class="form-group">    
+                                    <!-- Task title-->
+                                    <h5 class="card-title">Title</h5>
+                                    <input type="text" name="title" value="<%= task.title %>" class="form-control mb-2" required>
+
+                                    <!-- Task description -->
+                                    <h5 class="card-title">Description</h5>                
+                                    <textarea name="description" id="" cols="100" rows="5" class="form-control mb-2" required><%= task.description %></textarea>
+
+                                    <!-- Task status -->
+                                    <h5 class="card-title mb-2">Status</h5>    
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="status" id="inlineRadio1" value="Open">
+                                        <label class="form-check-label" for="inlineRadio1">Open</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="status" id="inlineRadio2" value="Complete">
+                                        <label class="form-check-label" for="inlineRadio2">Completed</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="status" id="inlineRadio3" value="In-Progress">
+                                        <label class="form-check-label" for="inlineRadio3">In-Progress</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="status" id="inlineRadio3" value="Archived">
+                                        <label class="form-check-label" for="inlineRadio4">Archived</label>
+                                      </div>
+                                      
+                                    <!-- Task assigned -->
+                                    <!-- <br>
+                                    <h5 class="card-title">Assigned to:</h5>    
+                                    
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option value="" selected>Select user</option>
+                                        <% for(var i = 0; i < users.length; i++){ %>
+                                        <option value="<%= users[i].userName %>"  ><%= users[i].userName %></option>
+                                        <% } %>
+                                      </select> -->
+                                     
+                                </div>          
+                                <button type="submit" class="btn btn-primary btn-sm mb-2">Update</button>                                           
+                            </form>
+                        </div>
+                    </div>
+     </div>
+
+     </div>
+    </div>
+
+<%-include ('partials/_footer')%>
+
